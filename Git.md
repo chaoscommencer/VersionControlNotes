@@ -1,3 +1,4 @@
+
 # Git
 
 Helpful tips and tricks for configuring and using Git are provided below.
@@ -128,6 +129,25 @@ Use distinct coloration to identify lines which have been moved, but have otherw
 
 ```shell
 git config --global diff.colorMoved zebra
+```
+
+### Assign Git-Review Username
+
+Assign the username to use when working with git-review and Gerrit.
+
+```shell
+git config --global --add gitreview.username <username>
+```
+
+_NOTE: The <username> parameter is the username associated with Gerrit._  
+_NOTE: This configuration is only helpful when working with git-review and is otherwise unnecessary._
+
+#### Example
+
+Assign the Gerrit username `jdoe`.
+
+```shell
+git config --global --add gitreview.username jdoe
 ```
 
 ## Routine Usage
