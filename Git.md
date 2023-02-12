@@ -122,6 +122,14 @@ git config --global core.autocrlf false
 
 _WARNING: Avoid disabling the auto-CRLF feature if you're developing within a Windows environment, AND your editor is not configured to save with LF-style line endings._
 
+### Enable Diff Color Distinction for Moved Lines
+
+Use distinct coloration to identify lines which have been moved, but have otherwise been left unchanged.
+
+```shell
+git config --global diff.colorMoved zebra
+```
+
 ## Routine Usage
 
 The following commands have more common usecases used outside of initial setup.
