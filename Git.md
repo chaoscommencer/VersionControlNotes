@@ -33,7 +33,9 @@ git config --global user.email <email_address>
 
 _NOTE: As a security measure to protect your email from spam, it is recommended to use an auto-generated no-reply email address, such as those provided through GitHub._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Set the email address.
 
@@ -50,7 +52,9 @@ git config --global user.signingkey <signing_key>
 git config --global commit.gpgsign true
 ```
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Set the 16-character code for the GPG signing key, and enable GPG signing.
 
@@ -77,7 +81,9 @@ Change the default (master) branch for newly created repositories.
 git config --global init.defaultBranch <new_branch_name>
 ```
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Update the default branch name to main (instead of master); this is the new norm--it's also shorter.
 
@@ -101,7 +107,9 @@ Assign a global mailmap file for git to use.  This file maps user names and emai
 git config --global mailmap.file <mailmap_file_path>
 ```
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Assign the git.mailmap file located in the user's `~/.ssh` directory.
 
@@ -135,10 +143,12 @@ Assign the username to use when working with git-review and Gerrit.
 git config --global --add gitreview.username <username>
 ```
 
-_NOTE: The <username> parameter is the username associated with Gerrit._  
+_NOTE: The \<username\> parameter is the username associated with Gerrit._  
 _NOTE: This configuration is only helpful when working with git-review and is otherwise unnecessary._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Assign the Gerrit username `jdoe`.
 
@@ -170,7 +180,9 @@ git pull --rebase origin <remote_branch_name>
 
 _NOTE: The remote_branch_name parameter is the branch that the current branch will be rebased against._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Update the current branch with the most recent changes from the remote copy of the `main` branch.
 
@@ -186,9 +198,11 @@ Update the current local branch with the most recent changes from the specified 
 git rebase <local_source_branch_name>
 ```
 
-_NOTE: The <local_source_branch_name> parameter is the name of the local branch that the current branch will be rebased against._
+_NOTE: The \<local_source_branch_name\> parameter is the name of the local branch that the current branch will be rebased against._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Update the current branch with changes from the local copy of the `dev` branch.
 
@@ -204,9 +218,11 @@ Update the current local branch with the most recent changes from the specified 
 git merge <local_source_branch_name>
 ```
 
-_NOTE: The <local_source_branch_name> parameter is the name of the local branch that the current branch will be rebased against._
+_NOTE: The \<local_source_branch_name\> parameter is the name of the local branch that the current branch will be rebased against._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Update the current branch with changes from the local copy of the `dev` branch.
 
@@ -240,9 +256,11 @@ Update the target remote branch with changes from the specified local branch.
 git push origin <local_source_branch_name>:<remote_target_branch_name>
 ```
 
-_NOTE: The <local_source_branch_name> parameter is the name of the local source branch from which the <remote_target_branch_name> remote branch will be updated._
+_NOTE: The \<local_source_branch_name\> parameter is the name of the local source branch from which the \<remote_target_branch_name\> remote branch will be updated._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Update the `origin`'s `main` branch with changes from the local `dev` branch.
 
@@ -258,9 +276,11 @@ Set the upstream remote branch for the current branch to the specified target br
 git push -u origin <remote_target_branch_name>
 ```
 
-_NOTE: The <remote_target_branch_name> parameter is the name of the remote target branch to which changes from the current local branch will be pushed.  Subsequent pushes and pulls from the current local branch will interact with the specified remote branch._
+_NOTE: The \<remote_target_branch_name\> parameter is the name of the remote target branch to which changes from the current local branch will be pushed.  Subsequent pushes and pulls from the current local branch will interact with the specified remote branch._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Set the remote upstream branch for the current local branch to main, and push changes to it.
 
@@ -276,9 +296,11 @@ Rename the specified local branch with the specified replacement name.
 git branch -m <local_branch_name> <new_branch_name>
 ```
 
-_NOTE: The <local_branch_name> parameter is the name of the local branch being renamed, and the <new_branch_name> parameter is the new name the branch is receiving._
+_NOTE: The \<local_branch_name\> parameter is the name of the local branch being renamed, and the \<new_branch_name\> parameter is the new name the branch is receiving._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Rename the `dev` branch to `test`.
 
@@ -300,9 +322,11 @@ Alternatively, use:
 git push origin :<remote_branch_name>
 ```
 
-_NOTE: The <remote_branch_name> parameter is the name of the remote branch to be deleted._
+_NOTE: The \<remote_branch_name\> parameter is the name of the remote branch to be deleted._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Delete the remote `dev` and `test` branches.
 
@@ -319,10 +343,12 @@ Delete the specified local branch.
 git branch -d <local_branch_name>
 ```
 
-_NOTE: The <local_branch_name> parameter is the name of the local branch to be deleted._  
+_NOTE: The \<local_branch_name\> parameter is the name of the local branch to be deleted._  
 _NOTE: The `-D` argument may be required (instead of `-d`) to force branch deletion if the local branch contains changes not captured in the corresponding upstream branch on the remote repository._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Delete the local `dev` branch.
 
@@ -338,9 +364,11 @@ Log the new commits on the specified local branch from where it diverges from th
 git log --first-parent <local_branch_name>
 ```
 
-_NOTE: The <local_branch_name> parameter is the name of the branch whose commits should be logged._
+_NOTE: The \<local_branch_name\> parameter is the name of the branch whose commits should be logged._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Log the new commits on the local `dev` branch.
 
@@ -356,7 +384,9 @@ Log the most recent N commits, reserving one line for each commit.
 git log --oneline [-<N>]
 ```
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Log the most recent 5 commits in one line each.
 
@@ -383,10 +413,12 @@ Print the number of commits made by the specified author in the current local br
 git shortlog -sn --author="<author_name>"
 ```
 
-_NOTE: The <author_name> parameter is the name of the author whose commits should be counted._  
+_NOTE: The \<author_name\> parameter is the name of the author whose commits should be counted._  
 _NOTE: The git mailmap file will come in handy here._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Print the number of commits made by John Doe.
 
@@ -410,10 +442,12 @@ Add a remote repository to the list of remotes with the specified remote name.
 git remote add <new_remote_name> <new_remote_url>
 ```
 
-_NOTE: The <new_remote_name> parameter is the name that will be assigned to the remote within the context of the local git repository._  
-_NOTE: The <new_remote_url> parameter is the URL of the new remote repository being added._
+_NOTE: The \<new_remote_name\> parameter is the name that will be assigned to the remote within the context of the local git repository._  
+_NOTE: The \<new_remote_url\> parameter is the URL of the new remote repository being added._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Add the passed repository URL to the local repository as the `origin` remote.
 
@@ -429,11 +463,13 @@ Change the URL associated with a locally-configured remote repository name.
 git remote set-url <remote_name> <new_remote_url>
 ```
 
-_NOTE: The <remote_name> parameter is the locally-associated name of the remote repository whose URL will be re-assigned._  
-_NOTE: The <new_remote_url> parameter is the new URL the remote name is to be associated with._  
+_NOTE: The \<remote_name\> parameter is the locally-associated name of the remote repository whose URL will be re-assigned._  
+_NOTE: The \<new_remote_url\> parameter is the new URL the remote name is to be associated with._  
 _NOTE: This tends to be useful with working with forks or multiple repositories with the same base code._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Change the URL associated with the `origin` remote.
 
@@ -449,19 +485,21 @@ List the files modified within the specified range of commits.
 git show --pretty="format:" --name-only <BEGIN_COMMIT>..<END_COMMIT> | sort | uniq
 ```
 
-_NOTE: The <BEGIN_COMMIT> parameter is the hash of the first commit in the range._  
-_NOTE: The <END_COMMIT> parameter is the hash of the last commit in the range._  
+_NOTE: The \<BEGIN_COMMIT\> parameter is the hash of the first commit in the range._  
+_NOTE: The \<END_COMMIT\> parameter is the hash of the last commit in the range._  
 _NOTE: The commit hashes may be abbreviated._
 
 ### Modify Commit Messages
 
-Amend the commit messages of the most recent <X> commits.
+Amend the commit messages of the most recent \<N\> commits.
 
 ```shell
-git rebase -i -p HEAD~<X>
+git rebase -i -p HEAD~<N>
 ```
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Amend the commit messages of the most recent 3 commits.
 
@@ -471,16 +509,18 @@ git rebase -i -p HEAD~3
 
 ### Undo Commits
 
-Undo the most recent <N> commits in the commit history for the current local branch, but retain the associated changes locally for subsequent revision.
+Undo the most recent \<N\> commits in the commit history for the current local branch, but retain the associated changes locally for subsequent revision.
 
 ```shell
 git reset HEAD~<N> --soft
 ```
 
-_NOTE: The <N> parameter specifies the number of commits to revert._  
+_NOTE: The \<N\> parameter specifies the number of commits to revert._  
 _NOTE: This can be helpful when you'd like to update a preceding commit with some of those changes, such as with `commit --amend`._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Undo the most recent local commit, while retaining the changes in the local repository.
 
@@ -507,9 +547,11 @@ Search commit changes for specified text.
 git log -S "<text>" --source --all
 ```
 
-_NOTE: The <text> parameter is the text to be searched for._
+_NOTE: The \<text\> parameter is the text to be searched for._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Search commit changes for "Hello world".
 
@@ -525,7 +567,7 @@ List the files changed in a specified commit along with their status.
 git show --name-status <commit_hash>
 ```
 
-_NOTE: The <commit_hash> parameter is the hash of the commit whose files should be listed._  
+_NOTE: The \<commit_hash\> parameter is the hash of the commit whose files should be listed._  
 _NOTE: The commit hash can be abbreviated._
 
 ### List Only Files Added
@@ -542,7 +584,7 @@ Alternatively, the following should work, but doesn't seem to...
 git show --name-status --porcelain <commit> | grep "^A" | cut -c 4-
 ```
 
-_NOTE: The <commit_hash> parameter is the hash of the commit whose files should be listed._  
+_NOTE: The \<commit_hash\> parameter is the hash of the commit whose files should be listed._  
 _NOTE: The commit hash can be abbreviated._
 
 ### Print Number of Files in Commit
@@ -553,7 +595,7 @@ List the number of files changed in a specified commit.
 git log --oneline --name-status <commit_hash> -1 | wc -l
 ```
 
-_NOTE: The <commit_hash> parameter is the hash of the commit whose files should be listed._  
+_NOTE: The \<commit_hash\> parameter is the hash of the commit whose files should be listed._  
 _NOTE: The commit hash can be abbreviated._
 
 ### Point Branch HEAD to Commit
@@ -566,12 +608,14 @@ git branch -f <branch_name> <commit_hash>
 ```
 
 _NOTE: First must change to another local branch to proceed with the operation safely._  
-_NOTE: The <another_branch_name> parameter is the name of another branch._  
-_NOTE: The <branch_name> parameter is the name of the branch whose HEAD will be changed._  
-_NOTE: The <commit_hash> parameter is the hash of the commit to which the HEAD of the <branch_name> branch will point._  
+_NOTE: The \<another_branch_name\> parameter is the name of another branch._  
+_NOTE: The \<branch_name\> parameter is the name of the branch whose HEAD will be changed._  
+_NOTE: The \<commit_hash\> parameter is the hash of the commit to which the HEAD of the \<branch_name\> branch will point._  
 _NOTE: The commit hash can be abbreviated._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Change the head of the `main` branch to the specified commit.
 
@@ -596,9 +640,11 @@ Add the specified repository as a submodule to the current repository.
 git submodule add <remote_repository_url>
 ```
 
-_NOTE: The <remote_repository_url> parameter is the URL of the remote repository to be added as a submodule._
+_NOTE: The \<remote_repository_url\> parameter is the URL of the remote repository to be added as a submodule._
 
+<!-- markdownlint-disable MD024 -->
 #### Example
+<!-- markdownlint-enable MD024 -->
 
 Add Jekyll as a submodule to the current repository.
 
