@@ -496,6 +496,39 @@ Print the number of commits made by John Doe.
 git shortlog -sn --author="John Doe"
 ```
 
+### Print Committer of Commits
+
+Print the committer information of the most recent N commits on the specified branch.
+
+```shell
+git log --pretty=format:"[%h] %cd - %cn <%ce>" [<branch_name>] [-<N>]
+```
+
+_NOTE: The `%h` argument instructs pretty to print the abbreviated commit hash._  
+_NOTE: The `%cd` argument instructs pretty to print the commit\[ted\] date._  
+_NOTE: The `%cn` argument instructs pretty to print the committer name._  
+_NOTE: The `%ce` argument instructs pretty to print the committer email._  
+_NOTE: The \<branch_name\> parameter is the name of the branch whose commits should be logged._  
+_NOTE: The git mailmap file will come in handy here._
+
+Alternatively, use the `git show` command to print the committer information for a specific commit.
+
+```shell
+git show --pretty=format:"[%h] %cd - %cn <%ce>" <commit_hash>
+```
+
+_NOTE: The \<commit_hash\> parameter refers to the hash of a commit for which the committer information will be printed._
+
+<!-- markdownlint-disable MD024 -->
+#### Example
+<!-- markdownlint-enable MD024 -->
+
+Print the committer information of the most recent 3 commits on the local `dev` branch.
+
+```shell
+git log --pretty=format:"[%h] %cd - %cn <%ce>" dev -3
+```
+
 ### List Remote Repositories
 
 List the remote repositories.
