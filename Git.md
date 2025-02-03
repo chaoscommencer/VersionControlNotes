@@ -513,6 +513,28 @@ Change the URL associated with the `origin` remote.
 git remote set-url origin git@github.com:jekyll/jekyll.git
 ```
 
+### Rename Remote
+
+Change the name of a locally-configured remote repository.
+
+```shell
+git remote rename <remote_name> <new_remote_name>
+```
+
+_NOTE: The \<remote_name\> parameter is the locally-associated name of the remote repository._  
+_NOTE: The \<new_remote_name\> parameter is the new locally-associated name for the remote repository._  
+_NOTE: This tends to be useful with working with forks or multiple repositories with the same base code._
+
+<!-- markdownlint-disable MD024 -->
+#### Example
+<!-- markdownlint-enable MD024 -->
+
+Change the name of the `origin` remote to `jekyll`.
+
+```shell
+git remote rename origin jekyll
+```
+
 ### List Changed Files
 
 List the files modified within the specified range of commits.
