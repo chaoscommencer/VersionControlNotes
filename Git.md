@@ -617,6 +617,15 @@ _NOTE: The \<branch_name\> parameter is the name of the branch whose HEAD will b
 _NOTE: The \<commit_hash\> parameter is the hash of the commit to which the HEAD of the \<branch_name\> branch will point._  
 _NOTE: The commit hash can be abbreviated._
 
+Alternatively, the following command\[s\] can be used to change the head of the current branch:
+
+```shell
+git checkout <branch_name>
+git reset --hard <commit_hash>
+```
+
+_WARNING: The alternate method exposes your local repository to the potential loss of any unsaved/uncommitted changes._
+
 <!-- markdownlint-disable MD024 -->
 #### Example
 <!-- markdownlint-enable MD024 -->
