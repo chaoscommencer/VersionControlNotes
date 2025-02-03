@@ -244,6 +244,18 @@ git cherry-pick A^..B
 
 _NOTE: The letters `A` and `B` above represent the hashes of the commits in the desired range.  They may be abbreviated hashes._
 
+Alternatively, the following command\[s\] will cause the metadata for the new commits to retain the original authors and author\[ed\] dates:
+
+```shell
+# NOTE: This will leave the repository at a detached head
+git rebase --onto <branch_name> A^ B
+# NOTE: These commands will update the specified branch to the new head
+git branch -f <branch_name> HEAD
+git checkout <branch_name>
+```
+
+_NOTE: The \<branch_name\> parameter is the name of the branch whose HEAD will be changed._
+
 ### List Files with Conflicts
 
 List the files with outstanding conflicts caused by an in-progress merge/rebase.
