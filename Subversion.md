@@ -86,9 +86,7 @@ svn patch <patch_file_path>
 
 _NOTE: The \<patch_file_path\> parameter is the path to the file containing the patchset to be applied._
 
-<!-- markdownlint-disable MD024 -->
 #### Example
-<!-- markdownlint-enable MD024 -->
 
 Apply a changeset from the specified patch file to the current local branch.
 
@@ -133,9 +131,7 @@ svn cleanup <path> --remove-unversioned
 _NOTE: The \<path\> parameter is the relative path to the parent directory from which uncommitted files should be removed._  
 _NOTE: This operation is applied recursively._
 
-<!-- markdownlint-disable MD024 -->
 #### Example
-<!-- markdownlint-enable MD024 -->
 
 Remove new uncommitted files from the current directory and any descendant directories.
 
@@ -160,9 +156,7 @@ svn revert -R <path>
 _NOTE: The \<path\> parameter is the relative path to the parent directory from which uncommitted changes should be reverted._  
 _NOTE: This operation is ONLY applied recursively when the `-R`/`--recursive` argument is specified._
 
-<!-- markdownlint-disable MD024 -->
 #### Example
-<!-- markdownlint-enable MD024 -->
 
 Undo all uncommitted changes from files in the current directory and any descendant directories.
 
@@ -180,9 +174,7 @@ svn log [--limit <N>]
 
 _NOTE: The optional \<N\> parameter specifies the number of commits to which the log should be limited._
 
-<!-- markdownlint-disable MD024 -->
 #### Example
-<!-- markdownlint-enable MD024 -->
 
 Log the most-recent 5 commits.
 
