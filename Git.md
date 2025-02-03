@@ -529,6 +529,42 @@ Print the committer information of the most recent 3 commits on the local `dev` 
 git log --pretty=format:"[%h] %cd - %cn <%ce>" dev -3
 ```
 
+### Print Signer of Commits
+
+Print the signer information of the most recent N commits on the specified branch.
+
+```shell
+git log --pretty=format:"[%h] %G? %GG - Signer: %GS, %GK, %GF, %GT" [<branch_name>] [-<N>]
+```
+
+_NOTE: The `%h` argument instructs pretty to print the abbreviated commit hash._  
+_NOTE: The `%G?` argument instructs pretty to print the status of a signature (`G`, `B`, `U`, `X`, `Y`, `R`, `E`, `N`)._  
+_NOTE: The `%GG` argument instructs pretty to print the raw verification message for a signed commit._  
+_NOTE: The `%GS` argument instructs pretty to print the signer (name and email) for a signed commit._  
+_NOTE: The `%GK` argument instructs pretty to print the key used to sign a commit._  
+_NOTE: The `%GF` argument instructs pretty to print the fingerprint of the primary key whose subkey was used to sign a commit._  
+_NOTE: The `%GT` argument instructs pretty to print the trust level for the key used to sign a commit._  
+_NOTE: The \<branch_name\> parameter is the name of the branch whose commits should be logged._  
+_NOTE: The git mailmap file will come in handy here._
+
+Alternatively, use the `git show` command to print the signer information for a specific commit.
+
+```shell
+git show --pretty=format:"[%h] %G? %GG - Signer: %GS, %GK, %GF, %GT" <commit_hash>
+```
+
+_NOTE: The \<commit_hash\> parameter refers to the hash of a commit for which the signer information will be printed._
+
+<!-- markdownlint-disable MD024 -->
+#### Example
+<!-- markdownlint-enable MD024 -->
+
+Print the signer information of the most recent 3 commits on the local `dev` branch.
+
+```shell
+git log --pretty=format:"[%h] %G? %GG - Signer: %GS, %GK, %GF, %GT" dev -3
+```
+
 ### List Remote Repositories
 
 List the remote repositories.
