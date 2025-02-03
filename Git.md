@@ -496,6 +496,38 @@ Print the number of commits made by John Doe.
 git shortlog -sn --author="John Doe"
 ```
 
+### Update Author Name and/or Email
+
+Set the author name and email for commits in the current branch to the current user name and email as specified by `.gitconfig` and accessible as `git config user.name` and `git config user.email`.
+
+```shell
+git rebase -r <commit_hash> --exec 'git commit --amend --no-edit --reset-author --signoff'
+```
+
+_NOTE: The \<commit_hash\> parameter specifies the hash of the most recent commit that won't be included in the modifications; all newer commits will be included._  
+_WARNING: This command will also reset the author date for the updated commits to the current date.  To preserve the original author date, the commits must be individually amended via an interactive rebase with the `date` parameter specified._  
+_NOTE: Printing the author date is often helpful when patching the author name/email of commits for consistency, since resetting the author will also modify the author date unless overridden._  
+_NOTE: The git mailmap file will come in handy here._
+
+Alternatively, preserve the author dates by first printing the author date information (e.g. via `git log --pretty=format:"[%h] %ad"`) and by subsequently performing an interactive rebase, amending each commit with the proper date.
+
+```shell
+git rebase -i -r <commit_hash>
+# Repeat the following steps as necessary
+git commit --amend --no-edit --reset-author --date="<author_date>" --signoff
+git rebase --continue
+```
+
+<!-- markdownlint-disable MD024 -->
+#### Example
+<!-- markdownlint-enable MD024 -->
+
+Reset the author information for the most recent 3 commits.
+
+```shell
+git rebase -r HEAD~3 --exec 'git commit --amend --no-edit --reset-author --signoff'
+```
+
 ### Print Committer of Commits
 
 Print the committer information of the most recent N commits on the specified branch.
