@@ -586,6 +586,26 @@ Undo the most recent local commit, while retaining the changes in the local repo
 git reset HEAD~1 --soft
 ```
 
+### Rearrange, Edit, and/or Drop Changes
+
+Interactively rearrange, edit, drop, etc. commits from the current \[local\] branch.
+
+```shell
+git rebase -i -r <commit_hash>
+```
+
+_NOTE: The \<commit_hash\> parameter specifies the hash of the most recent commit that won't be included in the modifications; all newer commits will be included._  
+
+<!-- markdownlint-disable MD024 -->
+#### Example
+<!-- markdownlint-enable MD024 -->
+
+Interactively modify the most recent three local commits.
+
+```shell
+git rebase -i -r HEAD~3
+```
+
 ### Clean Up Repository
 
 Clean the repository of orphaned commits.
