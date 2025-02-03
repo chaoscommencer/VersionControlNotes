@@ -121,6 +121,26 @@ Assign the git.mailmap file located in the user's `~/.ssh` directory.
 git config --global mailmap.file ~/.ssh/git.mailmap
 ```
 
+### Assign Editor
+
+Assign a global editor for git to use.  The editor is used for various interactive git actions, including commit \[message\] editing and tagging as well as rebasing.  If not specified, git instead uses the system editor defined in one of the shell environment variables `VISUAL` or `EDITOR`, falling back to the vi editor if neither of those are defined.
+
+```shell
+git config --global core.editor <editor command>
+```
+
+<!-- markdownlint-disable MD024 -->
+#### Example
+<!-- markdownlint-enable MD024 -->
+
+Assign VS Code as the default editor.
+
+```shell
+git config --global core.editor "code --wait"
+```
+
+_NOTE: Some alternatives include emacs and nano._
+
 ### Disable Auto-CRLF
 
 Disable the auto-CRLF feature.  This feature can wreak havoc with commits if not supervised.  The default setting for Linux-based environments is to disable this feature anyways.  Assuming your editor is already configured to use LF-style line-endings, there is no need to enable the feature.
