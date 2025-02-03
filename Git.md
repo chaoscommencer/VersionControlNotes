@@ -430,6 +430,40 @@ Log the most recent 5 commits in one line each.
 git log --oneline -5
 ```
 
+### Print Author of Commits
+
+Print the author information of the most recent N commits on the specified branch.
+
+```shell
+git log --pretty=format:"[%h] %ad - %an <%ae>" [<branch_name>] [-<N>]
+```
+
+_NOTE: The `%h` argument instructs pretty to print the abbreviated commit hash._  
+_NOTE: The `%ad` argument instructs pretty to print the author\[ed\] date._  
+_NOTE: The `%an` argument instructs pretty to print the author name._  
+_NOTE: The `%ae` argument instructs pretty to print the author email._  
+_NOTE: The \<branch_name\> parameter is the name of the branch whose commits should be logged._  
+_NOTE: Printing the author date is often helpful when patching the author name/email of commits for consistency, since resetting the author will also modify the author date unless overridden._  
+_NOTE: The git mailmap file will come in handy here._
+
+Alternatively, use the `git show` command to print the author information for a specific commit.
+
+```shell
+git show --pretty=format:"[%h] %ad - %an <%ae>" <commit_hash>
+```
+
+_NOTE: The \<commit_hash\> parameter refers to the hash of a commit for which the author information will be printed._
+
+<!-- markdownlint-disable MD024 -->
+#### Example
+<!-- markdownlint-enable MD024 -->
+
+Print the author information of the most recent 3 commits on the local `dev` branch.
+
+```shell
+git log --pretty=format:"[%h] %ad - %an <%ae>" dev -3
+```
+
 ### Print Number of Commits Per Author
 
 Print the number of commits made by each author--on (all) branches.
